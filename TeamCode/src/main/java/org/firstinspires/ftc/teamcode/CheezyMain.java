@@ -66,8 +66,9 @@ public class CheezyMain extends OpMode
     public void loop() {
         // Show the elapsed game time and wheel power.
         telemetry.addData("Status", "Run Time: " + runtime.toString());
-        drivey.drivey(gamepad1.left_trigger, gamepad1.right_trigger, gamepad1.left_stick_x);
-        Letiteat.Letiteat(gamepad2.left_trigger);
+        drivey.drivey(gamepad1.left_trigger, gamepad1.right_trigger, -gamepad1.left_stick_x);
+        Letiteat.Letiteat(gamepad2.left_trigger, gamepad2.right_trigger);
+
     }
 
     @Override

@@ -6,17 +6,22 @@ import com.qualcomm.robotcore.util.Range;
 public class CheezyIntake {
 
     private DcMotor Intake = null;
+    private DcMotor Outtake = null;
 
     public CheezyIntake(CheezyMap robot){
 
         this.Intake = robot.intake;
+        this.Outtake = robot.intake;
 
     }
 
-    public void Letiteat(double leftTrigger){
+    public void Letiteat(double leftTrigger, double rightTrigger){
 
-        double leftPower    = Range.clip(leftTrigger, -1.0, 1.0) ;
-        Intake.setPower(leftPower);
+        double intakePower    = Range.clip(leftTrigger, -1.0, 1.0) ;
+        double outtakePower   = Range.clip(rightTrigger, -1.0, 1.0) ;
+        Outtake.setPower(-outtakePower);
+        Intake.setPower(intakePower);
+
 
     }
 
