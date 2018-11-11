@@ -44,6 +44,7 @@ public class CheezyMain extends OpMode
     CheezyMap robot;
     CheezyDrivetrain drivey;
     CheezyIntake Letiteat;
+    CheezyArm flex;
 
     @Override
     public void init() {
@@ -51,6 +52,7 @@ public class CheezyMain extends OpMode
         robot.init();
         drivey = new CheezyDrivetrain(robot);
         Letiteat = new CheezyIntake(robot);
+        flex = new CheezyArm(robot);
     }
 
     @Override
@@ -67,7 +69,8 @@ public class CheezyMain extends OpMode
         // Show the elapsed game time and wheel power.
         telemetry.addData("Status", "Run Time: " + runtime.toString());
         drivey.drivey(gamepad1.left_trigger, gamepad1.right_trigger, -gamepad1.left_stick_x);
-        Letiteat.Letiteat(gamepad2.left_trigger, gamepad2.right_trigger);
+        Letiteat.Letiteat(gamepad2.left_bumper, gamepad2.right_bumper);
+        flex.flex(gamepad2.left_trigger, gamepad2.right_trigger);
 
     }
 

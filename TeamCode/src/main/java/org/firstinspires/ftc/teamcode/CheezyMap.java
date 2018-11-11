@@ -11,6 +11,7 @@ public class CheezyMap {
     public DcMotor leftFrontDrive = null;
     public DcMotor rightBackDrive = null;
     public DcMotor intake = null;
+    public DcMotor arm = null;
 
     public CheezyMap(HardwareMap hardwareMap){
         leftFrontDrive  = hardwareMap.get(DcMotor.class, "leftFronty");
@@ -18,6 +19,7 @@ public class CheezyMap {
         leftBackDrive  = hardwareMap.get(DcMotor.class, "leftBacky");
         rightBackDrive = hardwareMap.get(DcMotor.class, "rightBacky");
         intake = hardwareMap.get(DcMotor.class, "Intake");
+        arm = hardwareMap.get(DcMotor.class, "Arm");
     }
     public void init() {
         leftFrontDrive.setDirection(DcMotor.Direction.FORWARD);
@@ -25,6 +27,7 @@ public class CheezyMap {
         leftBackDrive.setDirection(DcMotor.Direction.FORWARD);
         rightBackDrive.setDirection(DcMotor.Direction.REVERSE);
         intake.setDirection(DcMotor.Direction.FORWARD);
+        arm.setDirection(DcMotor.Direction.FORWARD);
     }
 
 }
