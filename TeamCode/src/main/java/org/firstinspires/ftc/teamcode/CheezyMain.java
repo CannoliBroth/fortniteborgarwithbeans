@@ -45,6 +45,7 @@ public class CheezyMain extends OpMode
     CheezyDrivetrain drivey;
     CheezyIntake Letiteat;
     CheezyArm flex;
+    ICE Border;
 
     @Override
     public void init() {
@@ -53,6 +54,7 @@ public class CheezyMain extends OpMode
         drivey = new CheezyDrivetrain(robot);
         Letiteat = new CheezyIntake(robot);
         flex = new CheezyArm(robot);
+        Border = new ICE(robot);
     }
 
     @Override
@@ -71,6 +73,7 @@ public class CheezyMain extends OpMode
         drivey.drivey(gamepad1.left_trigger, gamepad1.right_trigger, -gamepad1.left_stick_x);
         Letiteat.Letiteat(gamepad2.left_bumper, gamepad2.right_bumper);
         flex.flex(gamepad2.left_trigger, gamepad2.right_trigger);
+        Border.Border(gamepad2.a, gamepad2.b);
 
     }
 
