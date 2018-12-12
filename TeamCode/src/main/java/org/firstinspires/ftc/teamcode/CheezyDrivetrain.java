@@ -27,9 +27,51 @@ public class CheezyDrivetrain {
         leftBackDrive.setPower(leftPower);
         rightBackDrive.setPower(rightPower);
         //telemetry.addData("Motors", "left (%.2f), right (%.2f)", leftPower, rightPower);
-
-
     }
+
+    public void setAllMotors(DcMotor.RunMode mode) {
+        leftBackDrive.setMode(mode);
+        rightBackDrive.setMode(mode);
+        leftFrontDrive.setMode(mode);
+        rightFrontDrive.setMode(mode);
+    }
+
+    public int getLeftPosition() {
+        return leftFrontDrive.getCurrentPosition();
+    }
+
+    public int getRightPosition() {
+        return rightFrontDrive.getCurrentPosition();
+    }
+
+    public void setLeftTarget(int target) {
+        leftBackDrive.setTargetPosition(target);
+        leftFrontDrive.setTargetPosition(target);
+    }
+
+    public void setRightTarget(int target) {
+        rightBackDrive.setTargetPosition(target);
+        rightFrontDrive.setTargetPosition(target);
+    }
+
+    public void setRightPower(double power) {
+        rightFrontDrive.setPower(power);
+        rightBackDrive.setPower(power);
+    }
+
+    public void setLeftPower(double power) {
+        leftFrontDrive.setPower(power);
+        leftBackDrive.setPower(power);
+    }
+
+    public boolean leftIsBusy() {
+        return (leftFrontDrive.isBusy() && leftBackDrive.isBusy());
+    }
+
+    public boolean rightIsBusy() {
+        return (rightBackDrive.isBusy() && rightFrontDrive.isBusy());
+    }
+
 
 }
 

@@ -13,7 +13,7 @@ public class CheezyMap {
     public DcMotor rightBackDrive = null;
     public DcMotor intake = null;
     public DcMotor arm = null;
-    public Servo ICE = null;
+    //public Servo ICE = null;
 
     public CheezyMap(HardwareMap hardwareMap){
         leftFrontDrive  = hardwareMap.get(DcMotor.class, "leftFronty");
@@ -22,7 +22,7 @@ public class CheezyMap {
         rightBackDrive = hardwareMap.get(DcMotor.class, "rightBacky");
         intake = hardwareMap.get(DcMotor.class, "Intake");
         arm = hardwareMap.get(DcMotor.class, "Arm");
-        ICE = hardwareMap.get(Servo.class, "ICE");
+     //   ICE = hardwareMap.get(Servo.class, "ICE");
     }
     public void init() {
         leftFrontDrive.setDirection(DcMotor.Direction.FORWARD);
