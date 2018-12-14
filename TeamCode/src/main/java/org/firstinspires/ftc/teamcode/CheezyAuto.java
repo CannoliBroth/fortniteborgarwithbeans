@@ -13,12 +13,11 @@ public class CheezyAuto extends LinearOpMode {
     private ElapsedTime runtime = new ElapsedTime();
     CheezyMap robot;
     CheezyDrivetrain drivey;
-    static final double     COUNTS_PER_MOTOR_REV    = 1440 ;
-    static final double     DRIVE_GEAR_REDUCTION    = 2.0 ;
+    static final double     COUNTS_PER_MOTOR_REV    = 1120 ;
     static final double     WHEEL_DIAMETER_INCHES   = 4.0 ;
-    static final double     COUNTS_PER_INCH         = (COUNTS_PER_MOTOR_REV * DRIVE_GEAR_REDUCTION) /
+    static final double     COUNTS_PER_INCH         = (COUNTS_PER_MOTOR_REV ) /
             (WHEEL_DIAMETER_INCHES * 3.1415);
-    static final double     DRIVE_SPEED             = 0.1;
+    static final double     DRIVE_SPEED             = 0.4;
 
     @Override
     public void runOpMode() {
@@ -49,7 +48,7 @@ public class CheezyAuto extends LinearOpMode {
 
         // Step through each leg of the path,
         // Note: Reverse movement is obtained by setting a negative distance (not speed)
-        encoderDrive(DRIVE_SPEED,  -12,  -12, 5.0);  // S1: Forward 47 Inches with 5 Sec timeout
+        encoderDrive(DRIVE_SPEED,  -48,  -48, 5.0);  // S1: Forward 47 Inches with 5 Sec timeout
 
         telemetry.addData("Path", "Complete");
         telemetry.update();

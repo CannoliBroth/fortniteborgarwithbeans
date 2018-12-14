@@ -69,7 +69,7 @@ public class CheezyDrivetrain {
     }
 
     public boolean rightIsBusy() {
-        return (rightBackDrive.isBusy() && rightFrontDrive.isBusy());
+        return (rightFrontDrive.isBusy() && rightBackDrive.isBusy());
     }
 
 
